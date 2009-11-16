@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "---------------------"
+echo "--- function call --- $2" 
+echo "---------------------"
+global -rx $1
+echo "-----------------------"
+echo "--- function define --- $2"
+echo "-----------------------"
+global -x $1

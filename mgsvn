@@ -1,0 +1,57 @@
+#!/usr/bin/env python
+
+# moogoo's svn command script
+# beta
+
+import os, sys
+
+# default server list
+svn_server_list = {"turtle": "http://moodo.name/svn_turtle",
+                   "flamegold": "http://svn.moodo.name/flamegold"}
+
+
+def get_svn_server():
+  for serv in svn_server_list: 
+    if serv == sys.argv[1]:
+      print "connecting... " + svn_server_list[serv]
+      return svn_server_list[serv]
+  return sys.argv[1]
+
+def help_cmd():
+  print "cmd: (ls, info)"
+
+def help():
+  print "usage: mgsvn svn_server"
+  print "--- default server ---"
+  for serv in svn_server_list: 
+    print serv + " -> " + svn_server_list[serv] 
+  print "----------------------"
+  help_cmd()
+
+
+def go_svn():
+  quit = 0
+  silent = 0
+  # find svn server
+  serv = get_svn_server()
+  if serv == None:
+    print "server not found"
+    sys.exit()
+  
+  # exec loop
+  while quit == 0:
+    cmd = raw_input("svn cmd: ")
+    if cmd == "q":
+      quit = 1
+      break 
+    if cmd == "h":
+      help_cmd()
+      silent = 1
+    if not silent:
+       os.system("svn " + cmd  + " " + serv)
+
+if __name__ == '__main__':
+  if len(sys.argv) < 2:
+    help()
+  else:
+    go_svn()

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# via: http://p8e.org/?itemid=745
+echo $1 | iconv -f utf8 -t sjis | kakasi -JK | iconv -f sjis -t utf8
