@@ -83,7 +83,6 @@ def find_in_file(f, path, str_pattern):
                 
     with open(full_path) as fopen:
         if is_binary(full_path) != 1 and f not in IGNORE_FILES:
-            print full_path
             found = 0
             # find in each line
             for line in fopen:
