@@ -82,7 +82,8 @@ def find_in_file(f, path, str_pattern):
     ln = 0 # line number
                 
     with open(full_path) as fopen:
-        if is_binary(full_path) != 1 and fopen not in IGNORE_FILES:
+        if is_binary(full_path) != 1 and f not in IGNORE_FILES:
+            print full_path
             found = 0
             # find in each line
             for line in fopen:
@@ -112,7 +113,7 @@ def set_color(keyword, color_code):
         #return keyword.replace(str(keyword), '\033[0;'+str(color_code)+'m'+str(keyword)+'\033[m')
         return '\033[0;' + str(color_code) + 'm' + str(keyword) + '\033[m'
     else:
-        return string
+        return str(keyword)
 
 def is_binary(filename):
     fopen = open(filename, 'rb')
