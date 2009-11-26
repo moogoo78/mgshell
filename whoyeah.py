@@ -63,7 +63,7 @@ def main(str_pattern, target_dir):
                 if path.find(dirt) > 0: 
                     ignore = True
                     break
-            if not ignore:
+            if not ignore and os.path.isfile(os.path.join(path, f)):
                 found = find_in_file(f, path, str_pattern)
                 if found > 0 :
                     num_match_files += 1
