@@ -94,7 +94,7 @@ def find_in_file(f, path, str_pattern):
                     match.append(m.group(0))
                 if len(match) > 0:
                     if found == 0:
-                        print set_color(full_path, 100)
+                        print set_color(full_path, 91)
                     for keyword in match:
                         line = replace_by_color(line, keyword, 95)
                         found += 1
