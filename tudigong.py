@@ -2,7 +2,7 @@
 # -.- coding: utf-8 -.-
 
 """
-WhoYeah(虎爺) - a grep like string finder in Python
+TuDiGong(土地公) - a grep like string finder in Python
 
 *inspired:*
   - grep-ack - a perl grep-like
@@ -20,6 +20,9 @@ WhoYeah(虎爺) - a grep like string finder in Python
 
 *CHANGELOG*
 -----------
+tudigong.py-0.1, 2010-10-26
+  * change name to tudigon
+  * add win32 environment (console color), unfinished
 whoyeah.py-2.0, 2009-11-18
   * refactor and change project name
   * solve bugs: 
@@ -38,7 +41,10 @@ mfind-1.0,2009-05-05
 # for file open
 from __future__ import with_statement # This isn't required in Python 2.6
 import sys, os, string, re
-
+if os.name == "nt":
+    from ctypes import *
+    windll.Kernel32.GetStdHandle.restype = c_ulong
+    std_out_handle = windll.Kernel32.GetStdHandle(c_ulong(0xfffffff5))
 
 ### config ###
 # set exclude files and dirs
@@ -104,13 +110,21 @@ def find_in_file(f, path, str_pattern):
 
 
 def replace_by_color(string, keyword, color_code):
-    return string.replace(str(keyword), set_color(str(keyword),95) )
-
+#    if os.name == "nt":
+#        windll.Kernel32.SetConsoleTextAttribute(std_out_handle, 14)
+#        print (str(keyword))
+#        windll.Kernel32.SetConsoleTextAttribute(std_out_handle, 7)
+#    else: 
+        return string.replace(str(keyword), set_color(str(keyword),95) )
 
 def set_color(keyword, color_code):
     if os.getenv('TERM',None) in ['rxvt','xterm']:
         #return keyword.replace(str(keyword), '\033[0;'+str(color_code)+'m'+str(keyword)+'\033[m')
         return '\033[0;' + str(color_code) + 'm' + str(keyword) + '\033[m'
+#    elif os.name == "nt":
+#        windll.Kernel32.SetConsoleTextAttribute(std_out_handle, 10)
+#        print str(keyword)
+#        windll.Kernel32.SetConsoleTextAttribute(std_out_handle, 7) # 7 is light grey, 15 is white
     else:
         return str(keyword)
 
