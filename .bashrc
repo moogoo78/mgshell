@@ -115,4 +115,4 @@ export LESS="-erX"
 PATH=$PATH:~/mgshell:~/bin:/sbin:/usr/sbin
 alias wy="whoyeah.py"
 
-source ~/.bashrc_my_pic
+#source ~/.bashrc_my_pic
