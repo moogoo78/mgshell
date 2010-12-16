@@ -1,0 +1,29 @@
+#! /bin/bash
+# svndp: svn diff with previous 
+# usage: svndp FILENAME
+# TODO: refine awk
+
+if [[ ! -d .svn ]]
+then
+	 echo ERROR: You are not working in an SVN directory.
+	  exit 1
+fi
+
+if [[ ! -n $1 ]]
+then
+    read -p "Do you really want to diff all files? (y/n) " yn
+    if [ "$yn" == "Y" ] || [ "$yn" == "y" ]; then
+	    echo "diff all"
+    fi
+    if [ "$yn" == "N" ] || [ "$yn" == "n" ]; then
+	    exit 1
+    fi
+fi
+
+filename=$1
+n=`svn log -q -l 2 $filename|awk '{print $1}'|grep r`
+r1=`echo $n | awk '{print $1}'`
+r2=`echo $n | awk '{print $2}'`
+
+# execution
+svn diff $filename -r $r1:$r2 --diff-cmd kdiff3
