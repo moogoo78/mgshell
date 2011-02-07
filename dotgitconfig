@@ -1,0 +1,19 @@
+[user]
+	name = MooGoo
+	email = moogoo78@gmail.com
+[color]
+  ui = auto
+	status = auto
+	branch = auto
+	diff = auto
+	log = auto
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = ls-files
