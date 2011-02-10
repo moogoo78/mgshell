@@ -2,7 +2,7 @@
 # -.- coding: utf-8 -.-
 
 """
-mg-magpie - a grep like string finder in Python
+whoyeah - a grep like string finder in Python
 
 *inspired:*
   - grep-ack - a perl grep-like
@@ -22,6 +22,8 @@ mg-magpie - a grep like string finder in Python
 
 *CHANGELOG*
 -----------
+whoyeah.py-0.1, 2011-02-09
+  * back to whoyeah, I like whoyeah!
 mg-magpie.py-0.1, 2010-11-02
   * change name
   * add found file list
