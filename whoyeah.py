@@ -22,6 +22,8 @@ whoyeah - a grep like string finder in Python
 
 *CHANGELOG*
 -----------
+whoyeah.py-0.2, 2011-02-12
+  * add quiet_dir options for ignore search
 whoyeah.py-0.1, 2011-02-09
   * back to whoyeah, I like whoyeah!
 mg-magpie.py-0.1, 2010-11-02
