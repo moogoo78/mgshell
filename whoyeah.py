@@ -55,8 +55,8 @@ if os.name == "nt":
 
 ### config ###
 # set exclude files and dirs
-IGNORE_FILES = ('TAGS', 'tags') #GLOBAL... 
-IGNORE_DIRS = ('.git', '.svn')
+IGNORE_FILES = ['TAGS', 'tags']
+IGNORE_DIRS = ['.git', '.svn']
 
 TEXTCHARS = ''.join(map(chr, [7,8,9,10,12,13,27] + range(0x20, 0x100)))
 ALLBYTES = ''.join(map(chr, range(256)))
@@ -67,6 +67,9 @@ def main(str_pattern, target_dir):
     num_match_files = 0
     num_matches = 0
     file_list = []
+
+    if options.quiet_dir:
+        IGNORE_DIRS.extend(options.quiet_dir.split(' '))
 
     for path, dirs, files in os.walk(target_dir, topdown=True):
         for f in files:
@@ -163,11 +166,15 @@ if __name__ == '__main__':
     from optparse import OptionParser
     usage = "usage: %prog [options] PATTERN"
     parser = OptionParser(usage=usage)
-    parser.add_option("-i", "--ignore_case",
+    parser.add_option('-i', '--ignore_case',
                       action='store_true', dest='ignore_case', default=False,
                       help='ignore case sensitive')
     parser.add_option('-t', '--target', dest='target_dir', default='.',
-                      help='set search target', metavar='TARGET')    
+                      help='set search target', metavar='TARGET')
+    parser.add_option("-q", '--quiet', dest='quiet_dir', default='',
+                      help='ignore file or directory to be search',
+                      metavar='BIGFILE')
+
     (options, args) = parser.parse_args()
 
     if not args:
