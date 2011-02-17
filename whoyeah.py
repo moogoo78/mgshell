@@ -73,6 +73,8 @@ def main(str_pattern, target_dir):
     if options.quiet_dir:
         IGNORE_DIRS.extend(options.quiet_dir.split(' '))
 
+    print 'wy search, ignoring... ' +  "[" + ", ".join(IGNORE_DIRS) + "]"
+
     for path, dirs, files in os.walk(target_dir, topdown=True):
         for f in files:
             found = 0
