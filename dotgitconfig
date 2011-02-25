@@ -17,6 +17,6 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   lima = log --graph --decorate --pretty=oneline --abbrev-commit --since='1 day ago'
-  lm = log --pretty=format:'%h was %an, %ar, msg: %s'
+  ll = log --pretty=format:'%h was %an, %ar, msg: %s'
   ls = ls-files
 
