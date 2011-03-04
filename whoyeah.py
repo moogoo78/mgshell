@@ -22,6 +22,8 @@ whoyeah - a grep like string finder in Python
 
 *CHANGELOG*
 -----------
+whoyeah.py-0.3, 2011-03-04
+  * add .wyignore file
 whoyeah.py-0.2, 2011-02-12
   * add quiet_dir options for ignore search
 whoyeah.py-0.1, 2011-02-09
@@ -72,6 +74,12 @@ def main(str_pattern, target_dir):
 
     if options.quiet_dir:
         IGNORE_DIRS.extend(options.quiet_dir.split(' '))
+
+    # find .wyignore file
+    with open(".wyignore") as fopen:
+        for ignore_dir in fopen:
+            d = ignore_dir.strip(' \t\n\r')
+            IGNORE_DIRS.append(d)
 
     print 'wy search, ignoring... ' +  "[" + ", ".join(IGNORE_DIRS) + "]"
 
