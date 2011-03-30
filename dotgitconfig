@@ -20,3 +20,5 @@
   lm = log --pretty=format:'%h was %an, %ar, msg: %s'
   ls = ls-files
 
+[diff]
+	external = /home/moogoo/mgshell/git-meld
