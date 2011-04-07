@@ -76,10 +76,11 @@ def main(str_pattern, target_dir):
         IGNORE_DIRS.extend(options.quiet_dir.split(' '))
 
     # find .wyignore file
-    with open(".wyignore") as fopen:
-        for ignore_dir in fopen:
-            d = ignore_dir.strip(' \t\n\r')
-            IGNORE_DIRS.append(d)
+    if os.path.isfile(".wyignore"):
+        with open(".wyignore") as fopen:
+            for ignore_dir in fopen:
+                d = ignore_dir.strip(' \t\n\r')
+                IGNORE_DIRS.append(d)
 
     print 'wy search, ignoring... ' +  "[" + ", ".join(IGNORE_DIRS) + "]"
 
