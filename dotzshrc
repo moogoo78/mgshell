@@ -6,7 +6,7 @@ LANG='zh_TW.UTF-8'
 #LC_CTYPE=C
 
 alias ls='ls --color=auto'
-
+alias wy='~/mgshell/whoyeah.py'
 # HISTORY
 HISTSIZE=10000
 SAVEHIST=10000 # saved in history after logout
