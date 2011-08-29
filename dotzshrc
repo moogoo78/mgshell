@@ -7,6 +7,7 @@ LANG='zh_TW.UTF-8'
 
 alias ls='ls --color=auto'
 alias wy='~/mgshell/whoyeah.py'
+
 # HISTORY
 HISTSIZE=10000
 SAVEHIST=10000 # saved in history after logout
@@ -141,7 +142,7 @@ done
 PR_NO_COLOR="%{$terminfo[sgr0]%}"
 
 # get git branch name
-# http://c9s.blogspot.com/2009/11/zsh-prompt-git-branch.html
+# via: http://c9s.blogspot.com/2009/11/zsh-prompt-git-branch.html
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo "(${ref#refs/heads/})"
