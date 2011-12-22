@@ -112,7 +112,6 @@ alias owari="sudo shutdown -h now"
 # for git-diff --color error
 export LESS="-erX"
 
-PATH=$PATH:~/mgshell:~/bin:/sbin:/usr/sbin
-alias wy="whoyeah.py"
+PATH=$PATH:~/mgshell:~/Applications:/sbin:/usr/sbin
 
 #source ~/.bashrc_my_pic

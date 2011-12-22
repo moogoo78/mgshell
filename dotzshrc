@@ -1,12 +1,12 @@
-PATH="$PATH:~/mgshell:~/bin:/sbin:/usr/sbin"
 EDITOR='vim'
 PAGER='less'
 LANG='zh_TW.UTF-8'
 #LANG='zh_TW.UTF-8'
 #LC_CTYPE=C
 
+export PATH="$PATH:$HOME/mgshell:$HOME/Applications:/sbin:/usr/sbin"
+
 alias ls='ls --color=auto'
-alias wy='~/mgshell/whoyeah.py'
 
 # HISTORY
 HISTSIZE=10000
@@ -175,3 +175,7 @@ alias lls="ls -alh" # read more
 alias p="cd ..;ls;pwd"
 alias hh="cd ~/"
 alias owari="sudo shutdown -h now"
+alias dv="setxkbmap dvorak"
+alias asdf="setxkbmap us"
+
+alias show="/var/lib/gems/1.8/gems/showoff-io-0.3.1/bin/show"
