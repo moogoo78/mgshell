@@ -12,11 +12,10 @@ echo "============"
 cat $HOST_DEF_FILE | awk -F',' '{print NR ") " $2 " - " $1 "@" $2 ":" $3}'
 echo "------------"
 
-
-if [ $1 == '' ];then
-    read -p "choose hosts: " USER_SEL
-else
+if [ $1 > 0 ];then
     USER_SEL=$1
+else
+    read -p "choose hosts: " USER_SEL
 fi
 
 LINE_NO=0
