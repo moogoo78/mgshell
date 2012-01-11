@@ -9,7 +9,7 @@ HOST_DEF_FILE="$HOME/Dropbox/myhosts.cfg"
 echo "============"
 echo " Host lists"
 echo "============"
-cat $HOST_DEF_FILE | awk -F',' '{print NR ") " $2 " - " $1 "@" $2 ":" $3}'
+cat $HOST_DEF_FILE | awk -F',' '{print NR ") " $2 " (" $4 ") - " $1 "@" $2 ":" $3}'
 echo "------------"
 
 if [ $1 > 0 ];then
