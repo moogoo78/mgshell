@@ -1,4 +1,7 @@
-#! /bin/sh
+#! /bin/bash
+
+# myhosts.cfg example:
+# user,host,port
 
 HOST_DEF_FILE="$HOME/Dropbox/myhosts.cfg"
 
