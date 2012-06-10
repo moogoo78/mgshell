@@ -6,7 +6,10 @@ LANG='zh_TW.UTF-8'
 
 export PATH="$PATH:$HOME/mgshell:$HOME/Applications:/sbin:/usr/sbin"
 
-alias ls='ls --color=auto'
+# mac
+export PATH=/opt/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
+
+#alias ls='ls --color=auto'
 
 # HISTORY
 HISTSIZE=10000
@@ -170,12 +173,16 @@ PR_URCORNER=${altchar[k]:--}
 
 # my alias old
 # alias
-alias l="ls -lh" # for human read
-alias lls="ls -alh" # read more
+#alias l="ls -lh" # for human read
+#alias lls="ls -alh" # read more
 alias p="cd ..;ls;pwd"
 alias hh="cd ~/"
-alias owari="sudo shutdown -h now"
-alias dv="setxkbmap dvorak"
-alias asdf="setxkbmap us"
+#alias owari="sudo shutdown -h now"
+#alias dv="setxkbmap dvorak"
+#alias asdf="setxkbmap us"
+alias wy="~/mgshell/whoyeah.py"
+#alias show="/var/lib/gems/1.8/gems/showoff-io-0.3.1/bin/show"
 
-alias show="/var/lib/gems/1.8/gems/showoff-io-0.3.1/bin/show"
+alias gwww="ssh -i /Users/moogoo/work_qll/pem/QLLTA.pem root@qll.co"
+alias gweb="ssh -i /Users/moogoo/work_qll/pem/QLLWEB.pem ec2-user@122.248.252.7"
+alias cosim="/Applications/CoronaSDK/simulator"

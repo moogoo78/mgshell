@@ -21,4 +21,7 @@
   ls = ls-files
 
 [diff]
-	external = /home/moogoo/mgshell/git-meld
+	#external = /home/moogoo/mgshell/git-meld
+[github]
+	user = moogoo
+	token = 9c1867cc5da42381f7905aa4a3bd7f23
