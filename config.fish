@@ -1,3 +1,17 @@
+
+
+set fish_greeting 'Gosh!!'
+
+#function fish_title
+#	echo $_ '!! '
+#	pwd
+#end
+
+# add PATH
+if status --is-login
+	set PATH $PATH ~/mgshell
+end
+
 ## ref: 
 # https://wiki.archlinux.org/index.php/Fish#Configuration_Suggestions
 set fish_git_dirty_color cyan
@@ -34,6 +48,24 @@ function fish_prompt
          end 
 end
 
+
+# bash's alias
 function p
          cd ..;ls;pwd;
+end
+
+function j 
+        cd $argv
+end
+
+function rm
+        rm -i $argv
+end
+
+function l
+        ls -lh $argv
+end
+
+function lls
+        ls -alh $argv
 end
