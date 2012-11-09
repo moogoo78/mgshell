@@ -9,7 +9,7 @@ set fish_greeting 'Gosh!!'
 
 # add PATH
 if status --is-login
-	set PATH $PATH ~/mgshell
+	set PATH $PATH ~/mgshell ~/Dropbox/scripts ~/android-sdk-macosx/platform-tools
 end
 
 ## ref: 

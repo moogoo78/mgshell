@@ -186,3 +186,5 @@ alias wy="~/mgshell/whoyeah.py"
 alias gwww="ssh -i /Users/moogoo/work_qll/pem/QLLTA.pem root@qll.co"
 alias gweb="ssh -i /Users/moogoo/work_qll/pem/QLLWEB.pem ec2-user@122.248.252.7"
 alias cosim="/Applications/CoronaSDK/simulator"
+
+PATH=$PATH:$HOME/.manymo/bin # Add manymo to PATH for scripting
