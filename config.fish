@@ -69,3 +69,7 @@ end
 function lls
         ls -alh $argv
 end
+
+function corona
+        /Applications/CoronaSDK/Corona\ Simulator.app/Contents/MacOS/Corona\ Simulator .
+end

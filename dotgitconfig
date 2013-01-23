@@ -10,9 +10,11 @@
 [alias]
   st = status
   ci = commit -am
+  cm = commit --amend -m
   br = branch
   co = checkout
-  df = diff --color  --color-words --abbrev
+  #df = diff --color  --color-words --abbrev
+  df = difftool -t opendiff -y
   lg = log -p
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
@@ -22,7 +24,11 @@
 
 [diff]
 	#external = /home/moogoo/mgshell/git-meld
+  #external = opendiff
+
 
 [github]
 	user = moogoo
 	token = 9c1867cc5da42381f7905aa4a3bd7f23
+[core]
+	autocrlf = input
