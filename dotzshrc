@@ -144,11 +144,19 @@ for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
 done
 PR_NO_COLOR="%{$terminfo[sgr0]%}"
 
+
+git_status() {
+  if current_git_status=$(git status | grep 'added to commit' 2> /dev/null); then
+    echo "☝"
+  fi
+}
+
 # get git branch name
-# via: http://c9s.blogspot.com/2009/11/zsh-prompt-git-branch.html
+# ref: http://c9s.blogspot.com/2009/11/zsh-prompt-git-branch.html
+# http://stackoverflow.com/questions/1128496/to-get-a-prompt-which-indicates-git-branch-in-zsh
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "(${ref#refs/heads/})"
+  echo "(${ref#refs/heads/})" $(git_status)
 }
 
 #PS1="[$PR_BLUE%n$PR_WHITE@$PR_GREEN%U%m%u$PR_NO_COLOR:$PR_RED%2c$PR_NO_COLOR]%(!.#.$)"
