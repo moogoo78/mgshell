@@ -173,10 +173,11 @@ PR_URCORNER=${altchar[k]:--}
 
 # my alias old
 # alias
-#alias l="ls -lh" # for human read
-#alias lls="ls -alh" # read more
+alias :D="ls" # read more
+alias lls="ls -alh" # read more
 alias p="cd ..;ls;pwd"
 alias hh="cd ~/"
+alias j="cd"
 #alias owari="sudo shutdown -h now"
 #alias dv="setxkbmap dvorak"
 #alias asdf="setxkbmap us"

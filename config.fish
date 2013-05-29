@@ -70,6 +70,14 @@ function lls
         ls -alh $argv
 end
 
+function :D
+        ls -alh $argv
+end
+
 function corona
-        /Applications/CoronaSDK/Corona\ Simulator.app/Contents/MacOS/Corona\ Simulator .
+       /Applications/CoronaSDK/Corona\ Simulator.app/Contents/MacOS/Corona\ Simulator .
+end
+
+function top20 
+       du -a /home | sort -n -r | head -n 10
 end
