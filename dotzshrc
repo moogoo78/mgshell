@@ -189,8 +189,34 @@ alias j="cd"
 #alias owari="sudo shutdown -h now"
 #alias dv="setxkbmap dvorak"
 #alias asdf="setxkbmap us"
-alias wy="~/mgshell/whoyeah.py"
+alias rm="rm -i"
+alias wy="~/Dropbox/scripts/whoyeah/whoyeah.py"
 #alias show="/var/lib/gems/1.8/gems/showoff-io-0.3.1/bin/show"
 alias ee="/Applications/Emacs.app/Contents/MacOS/Emacs > /dev/null 2>&1 &" # for mac
+alias corona="/Applications/CoronaSDK/Corona\ Simulator.app/Contents/MacOS/Corona\ Simulator"
+alias emacs='open -a /Applications/Emacs.app $1'
+alias ec='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
 
 PATH=$PATH:$HOME/.manymo/bin # Add manymo to PATH for scripting
+
+# virtualenwrapper
+export WORKON_HOME=~/venv
+source /usr/local/bin/virtualenvwrapper.sh
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+
+# via: http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
+export MARKPATH=$HOME/.marks
+function jump { 
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+function mark { 
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+function unmark { 
+    rm -i "$MARKPATH/$1"
+}
+function marks {
+    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+
