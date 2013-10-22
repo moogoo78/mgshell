@@ -4,10 +4,12 @@ LANG='zh_TW.UTF-8'
 #LANG='zh_TW.UTF-8'
 #LC_CTYPE=C
 
-export PATH="$PATH:$HOME/mgshell:$HOME/Applications:/sbin:/usr/sbin"
+export PATH="$PATH:$HOME/mgshell:$HOME/Applications:/sbin:/usr/sbin:$HOME/Dropbox/scripts"
 
 # mac
 export PATH=/opt/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
+## mysql
+export PATH=/usr/local/mysql/bin/:$PATH
 
 #alias ls='ls --color=auto'
 
