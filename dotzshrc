@@ -4,7 +4,7 @@ LANG='zh_TW.UTF-8'
 #LANG='zh_TW.UTF-8'
 #LC_CTYPE=C
 
-export PATH="$PATH:$HOME/mgshell:$HOME/Applications:/sbin:/usr/sbin:$HOME/Dropbox/scripts"
+export PATH="$PATH:$HOME/mgshell:$HOME/Applications:/sbin:/usr/sbin:$HOME/Dropbox/scripts:$HOME/tools"
 
 # mac
 export PATH=/opt/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
@@ -192,7 +192,6 @@ alias j="cd"
 #alias dv="setxkbmap dvorak"
 #alias asdf="setxkbmap us"
 alias rm="rm -i"
-alias wy="~/Dropbox/scripts/whoyeah/whoyeah.py"
 #alias show="/var/lib/gems/1.8/gems/showoff-io-0.3.1/bin/show"
 alias ee="/Applications/Emacs.app/Contents/MacOS/Emacs > /dev/null 2>&1 &" # for mac
 alias corona="/Applications/CoronaSDK/Corona\ Simulator.app/Contents/MacOS/Corona\ Simulator"

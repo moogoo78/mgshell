@@ -21,6 +21,7 @@
   lima = log --graph --decorate --pretty=oneline --abbrev-commit --since='1 day ago'
   ll = log --pretty=format:'%h was %an, %ar, msg: %s'
   ls = ls-files
+  logx = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 
 [diff]
 	#external = /home/moogoo/mgshell/git-meld
@@ -32,3 +33,5 @@
 	token = 9c1867cc5da42381f7905aa4a3bd7f23
 [core]
 	autocrlf = input
+[push]
+	default = simple
