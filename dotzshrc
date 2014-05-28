@@ -7,7 +7,8 @@ LANG='zh_TW.UTF-8'
 export PATH="$PATH:$HOME/mgshell:$HOME/Applications:/sbin:/usr/sbin:$HOME/Dropbox/scripts:$HOME/tools"
 
 # mac
-export PATH=/opt/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
+export PATH=/opt/local/bin:/usr/local/Cellar/git/1.9.1/bin:$PATH
+#:/Applications/Xcode.app/Contents/Developer/usr/bin
 ## mysql
 export PATH=/usr/local/mysql/bin/:$PATH
 
@@ -183,18 +184,15 @@ PR_URCORNER=${altchar[k]:--}
 
 # my alias old
 # alias
-alias :D="ls" # read more
-alias lls="ls -alh" # read more
-alias p="cd ..;ls;pwd"
-alias hh="cd ~/"
-alias j="cd"
-#alias owari="sudo shutdown -h now"
+alias :D='ls'
+alias a='ls -alh'
+alias u='cd ..;ls;pwd'
+alias j='cd'
+alias df='df -h'
 #alias dv="setxkbmap dvorak"
 #alias asdf="setxkbmap us"
 alias rm="rm -i"
-#alias show="/var/lib/gems/1.8/gems/showoff-io-0.3.1/bin/show"
 alias ee="/Applications/Emacs.app/Contents/MacOS/Emacs > /dev/null 2>&1 &" # for mac
-alias corona="/Applications/CoronaSDK/Corona\ Simulator.app/Contents/MacOS/Corona\ Simulator"
 alias emacs='open -a /Applications/Emacs.app $1'
 alias ec='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
 
