@@ -195,12 +195,13 @@ alias rm="rm -i"
 alias ee="/Applications/Emacs.app/Contents/MacOS/Emacs > /dev/null 2>&1 &" # for mac
 alias emacs='open -a /Applications/Emacs.app $1'
 alias ec='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
-
+alias cona='/Applications/CoronaSDK_2393a/Corona\ Simulator.app/Contents/MacOS/Corona\ Simulator'
 PATH=$PATH:$HOME/.manymo/bin # Add manymo to PATH for scripting
 
 # virtualenwrapper
 export WORKON_HOME=~/venv
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
+source `which virtualenvwrapper.sh`
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 
@@ -219,3 +220,6 @@ function marks {
     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
