@@ -185,6 +185,8 @@ PR_URCORNER=${altchar[k]:--}
 # my alias old
 # alias
 alias :D='ls'
+alias :G='git status'
+alias v='vim'
 alias a='ls -alh'
 alias u='cd ..;ls;pwd'
 alias j='cd'
@@ -206,17 +208,17 @@ export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 
 # via: http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
-export MARKPATH=$HOME/.marks
-function jump { 
+export MARKPATH=$HOME/.bmark
+function jb { 
     cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
 }
-function mark { 
+function bmark { 
     mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
 }
-function unmark { 
+function unbmark { 
     rm -i "$MARKPATH/$1"
 }
-function marks {
+function lsbmark {
     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
 
