@@ -9,10 +9,10 @@ export LC_ALL=zh_TW.UTF-8
 export LANG=zh_TW.UTF-8
 
 # mac
-export PATH=/opt/local/bin:/usr/local/Cellar/git/1.9.1/bin:$PATH
+export PATH="/opt/local/bin:/usr/local/Cellar/git/1.9.1/bin:$PATH"
 #:/Applications/Xcode.app/Contents/Developer/usr/bin
 ## mysql
-export PATH=/usr/local/mysql/bin/:$PATH
+export PATH="/usr/local/mysql/bin/:$PATH"
 #alias ls='ls --color=auto'
 
 # HISTORY
@@ -185,12 +185,13 @@ PR_URCORNER=${altchar[k]:--}
 
 # my alias old
 # alias
-alias :D='ls'
+alias pwd="pwd|cowsay"
+alias :D="pwd;echo '-----';ls"
 alias :G='git status'
 alias p='fab runserver'
 alias v='vim'
 alias a='ls -alh'
-alias u='cd ..;ls;pwd'
+alias u='cd ..;ls; pwd'
 alias j='cd'
 alias df='df -h'
 #alias dv="setxkbmap dvorak"
