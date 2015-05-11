@@ -185,7 +185,7 @@ PR_URCORNER=${altchar[k]:--}
 
 # my alias old
 # alias
-alias pwd="pwd|cowsay"
+#alias pwd="pwd|cowsay"
 alias :D="pwd;echo '-----';ls"
 alias :G='git status'
 alias p='fab runserver'
