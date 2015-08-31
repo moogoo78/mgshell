@@ -35,3 +35,7 @@
 	autocrlf = input
 [push]
 	default = simple
+
+# auto rebase when merge conflict
+[branch]  
+  autosetuprebase = always
