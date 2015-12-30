@@ -3,7 +3,7 @@ PAGER='less'
 LANG='zh_TW.UTF-8'
 #LC_CTYPE=C
 
-export PATH="$PATH:$HOME/mgshell:$HOME/Applications:/sbin:/usr/sbin:$HOME/Dropbox/scripts:$HOME/tools"
+export PATH="$PATH:$HOME/mgshell:$HOME/Applications:/sbin:/usr/sbin:$HOME/Dropbox/scripts:$HOME/tools:$HOME/M/tools"
 
 export LC_ALL=zh_TW.UTF-8  
 export LANG=zh_TW.UTF-8
@@ -186,7 +186,7 @@ PR_URCORNER=${altchar[k]:--}
 # my alias old
 # alias
 #alias pwd="pwd|cowsay"
-alias :D="pwd;echo '-----';ls"
+alias oe="pwd;echo '-----';ls"
 alias :G='git status'
 alias p='fab runserver'
 alias v='vim'
@@ -205,11 +205,10 @@ alias cona='/Applications/CoronaSDK_2511/Corona\ Simulator.app/Contents/MacOS/Co
 PATH=$PATH:$HOME/.manymo/bin # Add manymo to PATH for scripting
 
 # virtualenwrapper
-export WORKON_HOME=~/venv
-#source /usr/local/bin/virtualenvwrapper.sh
-source `which virtualenvwrapper.sh`
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
+export WORKON_HOME=$HOME/M/.virtualenvs
+export PROJECT_HOME=$HOME/M/Devel
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 # via: http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 export MARKPATH=$HOME/.bmark
