@@ -1,0 +1,4 @@
+#!/bin/bash
+# du -d 1 |sort -nr | cut -f2- | xargs du -hs # mac
+du --max-depth=1 |sort -nr | cut -f2- | xargs du -hs
+
