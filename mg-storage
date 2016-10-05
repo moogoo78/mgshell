@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+# -.- coding: utf-8 -.-
+
+import os, json
+import subprocess
+import sys
+
+
+config_file = os.path.join(os.getenv("HOME"), '.mg_storage_conf')
+
+with open(config_file) as f:
+    conf = json.load(f)
+
+if len(sys.argv) < 3:
+    print 'mg-storage src dst'
+    exit
+
+src = sys.argv[1]
+dst = sys.argv[2]
+
+if conf['storage'] == 'b2':
+    cmd = ['b2', 'sync']
+    cmd.extend(['--excludeRegex', '\..*|.+\/\..+'])
+    cmd.append('--delete')
+
+    cmd.extend([src, 'b2://%s/%s' % (conf['bucket'], dst.decode('utf-8'))])
+    print '[mg-storage] run: %s' % ' '.join(cmd)
+    subprocess.call(cmd)
+
+
+
+

@@ -205,10 +205,12 @@ alias cona='/Applications/CoronaSDK_2511/Corona\ Simulator.app/Contents/MacOS/Co
 PATH=$PATH:$HOME/.manymo/bin # Add manymo to PATH for scripting
 
 # virtualenwrapper
-export WORKON_HOME=$HOME/M/.virtualenvs
+#export WORKON_HOME=$HOME/M/.virtualenvs
+export WORKON_HOME=$HOME/venv
 export PROJECT_HOME=$HOME/M/Devel
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+#source /usr/local/bin/virtualenvwrapper_lazy.sh
+source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 
 # via: http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 export MARKPATH=$HOME/.bmark
