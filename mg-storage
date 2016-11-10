@@ -6,27 +6,32 @@ import subprocess
 import sys
 
 
-config_file = os.path.join(os.getenv("HOME"), '.mg_storage_conf')
+CONFIG_FILE = '.mg_storage_conf'
 
-with open(config_file) as f:
-    conf = json.load(f)
+def main(src, dest):
 
-if len(sys.argv) < 3:
-    print 'mg-storage src dst'
-    exit
+    config = {}
+    config_file = os.path.join(os.getenv("HOME"), CONFIG_FILE)
+    
+    with open(config_file) as f:
+        config = json.load(f)
 
-src = sys.argv[1]
-dst = sys.argv[2]
+    cmd = config['cmd_pattern'].format(src.decode('utf-8'),
+                                       dest.decode('utf-8'))
+    # .開頭, path_to/.foo, Thumbs.db
+    #\..*|.+\/\..+|.+/Thumbs.db
 
-if conf['storage'] == 'b2':
-    cmd = ['b2', 'sync']
-    cmd.extend(['--excludeRegex', '\..*|.+\/\..+'])
-    cmd.append('--delete')
+    print '[mg-storage] run: %s' % cmd
 
-    cmd.extend([src, 'b2://%s/%s' % (conf['bucket'], dst.decode('utf-8'))])
-    print '[mg-storage] run: %s' % ' '.join(cmd)
-    subprocess.call(cmd)
-
+    # call cmd
+    subprocess.call(cmd.split(' '))
 
 
+if __name__ == '__main__':
 
+    usage = "usage: mg-storage src dest"
+
+    if len(sys.argv) > 2:
+        main(sys.argv[1], sys.argv[2])
+    else:
+        print usage
