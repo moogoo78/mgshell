@@ -9,14 +9,14 @@ export LC_ALL=zh_TW.UTF-8
 export LANG=zh_TW.UTF-8
 
 # mac
-export PATH="/opt/local/bin:/usr/local/Cellar/git/1.9.1/bin:$PATH"
+#export PATH="/opt/local/bin:/usr/local/Cellar/git/1.9.1/bin:$PATH"
 #:/Applications/Xcode.app/Contents/Developer/usr/bin
 ## mysql
-export PATH="/usr/local/mysql/bin/:$PATH"
+#$export PATH="/usr/local/mysql/bin/:$PATH"
 #alias ls='ls --color=auto'
 
 # python pyenv
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
 # HISTORY
 HISTSIZE=10000
