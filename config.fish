@@ -2,6 +2,11 @@
 
 set fish_greeting 'Gosh!!'
 
+# for pyenv
+set PATH ~/.pyenv/bin $PATH                                                                                          
+pyenv init - | source                                                                                                                                                                         
+pyenv virtualenv-init - | source
+
 #function fish_title
 #	echo $_ '!! '
 #	pwd
@@ -30,23 +35,31 @@ function parse_git_branch
          echo $branch (parse_git_dirty)     
 end
 
+function dk
+    docker $argv    
+end
+
+function dkc
+    docker-compose $argv
+end
+
 function head_om
          echo (set_color magenta)'ॐ '(set_color normal)
 end
 
 function start_sign
-         echo (set_color red)'⚡'(set_color normal)
+         echo (set_color red)'📀'(set_color normal)
 end 
 
-function fish_prompt
-         if test -z (git branch --quiet 2>| awk '/fatal:/ {print "no git"}')
+#function fish_prompt
+         #if test -z (git branch --quiet 2>| awk '/fatal:/ {print "no git"}')
             #printf '%s@%s %s%s%s (%s) %s %s' (head_om) (whoami) (hostname|cut -d . -f 1) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (parse_git_branch) (start_sign)            
-            printf '%s %s%s%s (%s%s%s) %s' (head_om) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (set_color cyan) (parse_git_branch) (set_color normal) (start_sign)            
-         else
+#            printf '%s %s%s%s (%s%s%s) %s' (head_om) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (set_color cyan) (parse_git_branch) (set_color normal) (start_sign)            
+#         else
             #printf '%s@%s %s%s%s %s %s' (head_om) (whoami) (hostname|cut -d . -f 1) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (start_sign)
-            printf '%s %s%s%s %s' (head_om) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (start_sign)
-         end 
-end
+#            printf '%s %s%s%s %s' (head_om) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (start_sign)
+#         end 
+#end
 
 
 # bash's alias
@@ -58,9 +71,9 @@ function j
         cd $argv
 end
 
-function rm
-        rm -i $argv
-end
+#function rm
+#        rm -i $argv
+#end
 
 function l
         ls -lh $argv
@@ -74,10 +87,17 @@ function :D
         ls -alh $argv
 end
 
+function she
+	grep -Hnri --color $argv
+end
+
 function corona
        /Applications/CoronaSDK/Corona\ Simulator.app/Contents/MacOS/Corona\ Simulator .
 end
 
-function top20 
+function top20
        du -a /home | sort -n -r | head -n 10
 end
+
+# https://nicedoc.io/brigand/fast-nvm-fish
+set -U fish_user_paths
