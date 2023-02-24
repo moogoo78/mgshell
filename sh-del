@@ -1,0 +1,5 @@
+#!/bin/bash
+
+find . -type f -name '._*' -delete
+find . -type f -name 'Thumbs.db' -delete
+find . -type f -name '.DS_store' -delete
