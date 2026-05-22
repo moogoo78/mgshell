@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/home/mg/.zsh/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 EDITOR='vim'
 PAGER='less'
 LANG='zh_TW.UTF-8'
@@ -13,9 +20,11 @@ export LANG=zh_TW.UTF-8
 #alias ls='ls --color=auto'
 
 # python pyenv
-#export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="$HOME/.pyenv"
 #command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init -)"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
 # HISTORY
 HISTSIZE=10000
@@ -255,4 +264,22 @@ export NVM_DIR="$HOME/.nvm"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/home/mg/.lmstudio/bin"
 # End of LM Studio CLI section
+
+
+# bun completions
+[ -s "/home/mg/.bun/_bun" ] && source "/home/mg/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+mvdl() {
+    local f
+    f=$(ls -t ~/Downloads | head -1) || return
+    mv ~/Downloads/"$f" .  && echo "moved: $f -> $PWD/"
+  }
 
