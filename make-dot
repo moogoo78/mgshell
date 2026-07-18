@@ -16,3 +16,6 @@ link_dot() {
 
 link_dot "$dotfolder/dotzshrc" ~/.zshrc
 link_dot "$dotfolder/dottmux.conf" ~/.tmux.conf
+link_dot "$dotfolder/dotgitignore.conf" ~/.gitignore
+link_dot "$dotfolder/dotgitconfig" ~/.gitconfig
+link_dot "$dotfolder/dotgitattribute" ~/.gitattribute
