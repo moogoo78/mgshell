@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+ln -sf ~/some/folder/dotzshrc ~/.zshrc
+ln -sf ~/some/folder/dottmux.conf ~/.tmux.conf
