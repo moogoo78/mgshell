@@ -210,7 +210,7 @@ alias a='ls -alh'
 alias u='cd ..;ls; pwd'
 alias j='cd'
 alias df='df -h'
-alias av='source venv/bin/activate'
+alias av='source .venv/bin/activate'
 #alias dv="setxkbmap dvorak"
 #alias asdf="setxkbmap us"
 alias rm="rm -i"
@@ -273,13 +273,22 @@ export PATH="$PATH:/home/mg/.lmstudio/bin"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
-mvdl() {
-    local f
-    f=$(ls -t ~/Downloads | head -1) || return
-    mv ~/Downloads/"$f" .  && echo "moved: $f -> $PWD/"
+# move newest file to current folder.
+#   mmv       scan both ~/Pictures/Screenshots and ~/Downloads
+#   mmv ss    scan only ~/Pictures/Screenshots
+#   mmv dl    scan only ~/Downloads
+mmv() {
+    local dirs f
+    case $1 in
+        ss) dirs=(~/Pictures/Screenshots) ;;
+        dl) dirs=(~/Downloads) ;;
+        "") dirs=(~/Pictures/Screenshots ~/Downloads) ;;
+        *)  echo "usage: mmv [ss|dl]"; return 1 ;;
+    esac
+    f=$(ls -td $^dirs/*(.) 2>/dev/null | head -1) || return
+    [[ -n $f ]] || { echo "no files found"; return 1; }
+    mv "$f" . && echo "moved: ${f:t} -> $PWD/"
   }
 
