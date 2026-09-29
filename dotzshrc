@@ -9,7 +9,7 @@ EDITOR='vim'
 PAGER='less'
 LANG='zh_TW.UTF-8'
 #LC_CTYPE=C
-export PATH="$PATH:$HOME/mgshell:$HOME/Applications:/sbin:/usr/sbin:$HOME/Dropbox/scripts:$HOME/tools:$HOME/M/tools:$HOME/.local/bin"
+export PATH="$PATH:$HOME/d/mgshell:$HOME/Applications:/sbin:/usr/sbin:$HOME/Dropbox/scripts:$HOME/tools:$HOME/M/tools:$HOME/.local/bin"
 
 export LC_ALL=zh_TW.UTF-8  
 export LANG=zh_TW.UTF-8
@@ -224,6 +224,7 @@ alias em='emacs -nw'
 alias netp='lsof -nP -iTCP -sTCP:LISTEN'
 PATH=$PATH:$HOME/.manymo/bin # Add manymo to PATH for scripting
 alias dck='lazydocker'
+alias aptup="$HOME/d/mgshell/apt-upgrade.sh"
 # virtualenwrapper
 #export WORKON_HOME=$HOME/M/.virtualenvs
 export WORKON_HOME=$HOME/venv
