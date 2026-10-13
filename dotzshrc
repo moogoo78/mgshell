@@ -42,6 +42,10 @@ bindkey '^R' history-incremental-search-backward
 # mapping del
 bindkey "\e[3~" delete-char
 
+# per-directory history (Ctrl-G toggles global/local)
+# must come after HISTFILE/HISTSIZE/SAVEHIST and `bindkey -v`
+[ -f "$HOME/d/mgshell/per-directory-history.zsh" ] && source "$HOME/d/mgshell/per-directory-history.zsh"
+
 setopt AUTO_PUSHD
 
 WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
