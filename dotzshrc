@@ -204,6 +204,7 @@ PR_URCORNER=${altchar[k]:--}
 # my alias old
 # alias
 #alias pwd="pwd|cowsay"
+alias e='xdg-open . >/dev/null 2>&1 &!'
 alias dk='docker'
 alias dkc='docker compose'
 alias oe="pwd;echo '-----';ls"
